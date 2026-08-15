@@ -4,6 +4,50 @@ plugins {
 
 rootProject.name = "MCRSpeedrun"
 
+val tavallToolsVersion = "1.0.0"
+val tavallToolRepositories = listOf(
+    "tavall-di",
+    "tavall-cache",
+    "tavall-concurrency",
+    "tavall-database",
+    "tavall-eventbus",
+    "tavall-logging",
+    "tavall-reflection",
+    "tavall-registry",
+    "tavall-scheduler",
+)
+
+gradle.beforeProject { project ->
+    val githubToken = providers.environmentVariable("GITHUB_TOKEN").orNull
+    if (!githubToken.isNullOrBlank()) {
+        tavallToolRepositories.forEach { repository ->
+            project.repositories.maven("https://maven.pkg.github.com/TavallStudios/$repository") {
+                name = "github${repository.replace("-", "")}"
+                credentials {
+                    username = providers.environmentVariable("GITHUB_ACTOR").orElse("github").get()
+                    password = githubToken
+                }
+            }
+        }
+    }
+
+    project.pluginManager.withPlugin("java") {
+        // DI is universal for Tavall-owned Java consumers, not just the shared API module.
+        project.dependencies.add("implementation", "org.tavall:tavall-di:$tavallToolsVersion")
+
+        when (project.path) {
+            ":store-persistence" -> project.dependencies.add(
+                "api",
+                "org.tavall:tavall-database-postgres:$tavallToolsVersion"
+            )
+            ":velocitycore" -> project.dependencies.add(
+                "implementation",
+                "org.tavall:tavall-database-redis:$tavallToolsVersion"
+            )
+        }
+    }
+}
+
 include(
     "api",
     "core",
