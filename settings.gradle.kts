@@ -4,6 +4,26 @@ plugins {
 
 rootProject.name = "MCRSpeedrun"
 
+val tavallToolsVersion = "1.0.0"
+
+gradle.beforeProject { project ->
+    project.pluginManager.withPlugin("java") {
+        // DI is universal for Tavall-owned Java consumers, not just the shared API module.
+        project.dependencies.add("implementation", "org.tavall:tavall-di:$tavallToolsVersion")
+
+        when (project.path) {
+            ":store-persistence" -> project.dependencies.add(
+                "api",
+                "org.tavall:tavall-database-postgres:$tavallToolsVersion"
+            )
+            ":velocitycore" -> project.dependencies.add(
+                "implementation",
+                "org.tavall:tavall-database-redis:$tavallToolsVersion"
+            )
+        }
+    }
+}
+
 include(
     "api",
     "core",

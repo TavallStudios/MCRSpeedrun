@@ -27,7 +27,12 @@ subprojects {
     }
 
     repositories {
-        mavenCentral()
+        mavenCentral {
+            content {
+                excludeGroupByRegex("org\\.tavall(?:\\..*)?")
+                excludeGroupByRegex("com\\.tavall(?:\\..*)?")
+            }
+        }
         maven("https://repo.papermc.io/repository/maven-public/")
         maven("https://repo.dmulloy2.net/repository/public/")
         maven("https://repo.codemc.io/repository/maven-public/")
