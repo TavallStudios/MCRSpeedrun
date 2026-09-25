@@ -1,0 +1,114 @@
+version: 2
+
+source:
+  repository: TavallStudios/MCRSpeedrun
+  provider: github
+
+build:
+  type: gradle
+  java: 25
+  gradle: 9.6.1
+
+resources:
+  mode: SYSTEM
+
+dependencies:
+  - kind: source
+    identity: TavallStudios/tavall-rating-glicko2
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-di
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-eventbus
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-logging
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-concurrency
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-reflection
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-scheduler
+    role: SHARED_DEP
+    selector: required-source
+
+artifacts:
+  - name: api
+    path: API/build/libs/api-0.jar
+  - name: core
+    path: Core/build/libs/core-0.jar
+  - name: minecraft-integration
+    path: MinecraftIntegration/build/libs/minecraft-integration-0.jar
+  - name: store-domain
+    path: StoreDomain/build/libs/store-domain-0.jar
+  - name: store-persistence
+    path: StorePersistence/build/libs/store-persistence-0.jar
+  - name: velocitycore
+    path: VelocityCore/build/libs/velocitycore-0.jar
+  - name: kingdomfactions
+    path: KingdomFactions/build/libs/kingdomfactions-0.jar
+  - name: speedrun
+    path: SpeedRun/build/libs/speedrun-0.jar
+  - name: website
+    path: Website/build/libs/website-0.jar
+
+requiredChecks:
+  - quality
+  - integration
+  - behavior
+
+checks:
+  quality:
+    executor: gradle
+    tasks:
+      - "clean"
+      - ":api:clean"
+      - ":core:clean"
+      - ":minecraft-integration:clean"
+      - ":store-domain:clean"
+      - ":store-persistence:clean"
+      - ":velocitycore:clean"
+      - ":kingdomfactions:clean"
+      - ":speedrun:clean"
+      - ":website:clean"
+      - "check"
+      - ":api:check"
+      - ":core:check"
+      - ":minecraft-integration:check"
+      - ":store-domain:check"
+      - ":store-persistence:check"
+      - ":velocitycore:check"
+      - ":kingdomfactions:check"
+      - ":speedrun:check"
+      - ":website:check"
+      - "assemble"
+      - ":api:assemble"
+      - ":core:assemble"
+      - ":minecraft-integration:assemble"
+      - ":store-domain:assemble"
+      - ":store-persistence:assemble"
+      - ":velocitycore:assemble"
+      - ":kingdomfactions:assemble"
+      - ":speedrun:assemble"
+      - ":website:assemble"
+
+  integration:
+    executor: gradle
+    tasks:
+      - ":store-persistence:integrationTest"
+      - ":website:integrationTest"
+      - ":velocitycore:integrationTest"
+
+  behavior:
+    executor: shell
+    script: .tavallci/scripts/frontend-build.sh
