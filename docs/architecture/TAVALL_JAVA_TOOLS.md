@@ -24,3 +24,5 @@ Do not introduce new first-party service locators, ServiceLoader composition, ex
 Paper, Velocity, and Spring remain external/platform adapters where thread affinity, lifecycle, HTTP, or framework contracts require them.
 
 Exact Java 25 repository verification, dependency-lock refresh, persistence integration tests, Paper/Velocity runtime acceptance, and website acceptance remain required before promotion.
+
+The shared Tavall modules listed in `.tavallci` are exact-source build inputs composed by Tavall CI. Maven Local and GitHub Packages are not internal dependency authorities; third-party Paper, Velocity, and CodeMC repositories remain external inputs.
