@@ -14,6 +14,18 @@ resources:
 
 dependencies:
   - kind: source
+    identity: TavallStudios/tavall-cache
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-database
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-registry
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
     identity: TavallStudios/tavall-rating-glicko2
     role: SHARED_DEP
     selector: required-source
