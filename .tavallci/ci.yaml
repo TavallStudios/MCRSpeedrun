@@ -73,6 +73,24 @@ artifacts:
     path: SpeedRun/build/libs/speedrun-0.jar
   - name: website
     path: Website/build/libs/website-0.jar
+  - name: mcr-api-lockfile
+    path: API/gradle.lockfile
+  - name: mcr-core-lockfile
+    path: Core/gradle.lockfile
+  - name: mcr-minecraft-integration-lockfile
+    path: MinecraftIntegration/gradle.lockfile
+  - name: mcr-store-domain-lockfile
+    path: StoreDomain/gradle.lockfile
+  - name: mcr-store-persistence-lockfile
+    path: StorePersistence/gradle.lockfile
+  - name: mcr-velocitycore-lockfile
+    path: VelocityCore/gradle.lockfile
+  - name: mcr-kingdomfactions-lockfile
+    path: KingdomFactions/gradle.lockfile
+  - name: mcr-speedrun-lockfile
+    path: SpeedRun/gradle.lockfile
+  - name: mcr-website-lockfile
+    path: Website/gradle.lockfile
 
 requiredChecks:
   - quality
@@ -124,3 +142,39 @@ checks:
   behavior:
     executor: shell
     script: .tavallci/scripts/frontend-build.sh
+
+  dependencies:
+    executor: gradle
+    writeDependencyLocks: true
+    includeInAll: false
+    tasks:
+      - "clean"
+      - ":api:clean"
+      - ":core:clean"
+      - ":minecraft-integration:clean"
+      - ":store-domain:clean"
+      - ":store-persistence:clean"
+      - ":velocitycore:clean"
+      - ":kingdomfactions:clean"
+      - ":speedrun:clean"
+      - ":website:clean"
+      - "check"
+      - ":api:check"
+      - ":core:check"
+      - ":minecraft-integration:check"
+      - ":store-domain:check"
+      - ":store-persistence:check"
+      - ":velocitycore:check"
+      - ":kingdomfactions:check"
+      - ":speedrun:check"
+      - ":website:check"
+      - "assemble"
+      - ":api:assemble"
+      - ":core:assemble"
+      - ":minecraft-integration:assemble"
+      - ":store-domain:assemble"
+      - ":store-persistence:assemble"
+      - ":velocitycore:assemble"
+      - ":kingdomfactions:assemble"
+      - ":speedrun:assemble"
+      - ":website:assemble"
