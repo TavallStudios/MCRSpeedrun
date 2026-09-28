@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 5041)
+Total output lines: 188
+
 # This is a Gradle generated file for dependency locking.
 # Manual edits can break the build and are not advised.
 # This file is expected to be part of source control.
@@ -78,47 +81,7 @@ org.hibernate.validator:hibernate-validator:9.1.0.Final=compileClasspath,runtime
 org.jboss.logging:jboss-logging:3.6.3.Final=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.jetbrains:annotations:17.0.0=testCompileClasspath,testRuntimeClasspath
 org.jspecify:jspecify:1.0.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.junit.jupiter:junit-jupiter-api:6.0.3=testCompileClasspath,testRuntimeClasspath
-org.junit.jupiter:junit-jupiter-engine:6.0.3=testRuntimeClasspath
-org.junit.jupiter:junit-jupiter-params:6.0.3=testCompileClasspath,testRuntimeClasspath
-org.junit.jupiter:junit-jupiter:6.0.3=testCompileClasspath,testRuntimeClasspath
-org.junit.platform:junit-platform-commons:6.0.3=testCompileClasspath,testRuntimeClasspath
-org.junit.platform:junit-platform-engine:6.0.3=testRuntimeClasspath
-org.junit.platform:junit-platform-launcher:6.0.3=testRuntimeClasspath
-org.junit:junit-bom:6.0.3=testCompileClasspath,testRuntimeClasspath
-org.mockito:mockito-core:5.23.0=testCompileClasspath,testRuntimeClasspath
-org.mockito:mockito-junit-jupiter:5.23.0=testCompileClasspath,testRuntimeClasspath
-org.objenesis:objenesis:3.3=testRuntimeClasspath
-org.opentest4j:opentest4j:1.3.0=testCompileClasspath,testRuntimeClasspath
-org.osgi:org.osgi.annotation.bundle:2.0.0=compileClasspath,testCompileClasspath
-org.osgi:org.osgi.annotation.versioning:1.1.2=compileClasspath,testCompileClasspath
-org.osgi:org.osgi.resource:1.0.0=compileClasspath,testCompileClasspath
-org.osgi:org.osgi.service.serviceloader:1.0.0=compileClasspath,testCompileClasspath
-org.ow2.asm:asm:9.7.1=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.postgresql:postgresql:42.7.11=runtimeClasspath,testRuntimeClasspath
-org.reactivestreams:reactive-streams:1.0.4=testCompileClasspath,testRuntimeClasspath
-org.rnorth.duct-tape:duct-tape:1.0.8=testCompileClasspath,testRuntimeClasspath
-org.skyscreamer:jsonassert:1.5.3=testCompileClasspath,testRuntimeClasspath
-org.slf4j:jul-to-slf4j:2.0.18=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.slf4j:slf4j-api:2.0.18=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-actuator-autoconfigure:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-actuator:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-autoconfigure:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-data-commons:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-data-jpa:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-dependencies:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-devtools:4.1.0=runtimeClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-flyway:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-health:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-hibernate:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-http-converter:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-jackson2:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-jackson:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-jdbc:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-jpa:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-micrometer-metrics:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-micrometer-observation:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
-org.springframework.boot:spring-boot-persistence:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
+org.junit.jupi…1041 tokens truncated…ath
 org.springframework.boot:spring-boot-security-oauth2-client:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-security:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
 org.springframework.boot:spring-boot-servlet:4.1.0=compileClasspath,runtimeClasspath,testCompileClasspath,testRuntimeClasspath
