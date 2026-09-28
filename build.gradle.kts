@@ -7,6 +7,8 @@ plugins {
 group = "com.tjxjnoobie"
 version = "0"
 
+val tavallToolsVersion = "1.0.0"
+
 val springBootBom = "org.springframework.boot:spring-boot-dependencies:4.1.0"
 val testcontainersVersion = "2.0.5"
 val junit = "org.junit.jupiter:junit-jupiter:5.10.2"
@@ -18,6 +20,15 @@ subprojects {
     version = rootProject.version
 
     apply(plugin = "java-library")
+
+    // Keep shared Tavall dependency intent in the repository-owned Gradle project.
+    dependencies.add("implementation", "org.tavall:tavall-di:$tavallToolsVersion")
+    if (path == ":store-persistence") {
+        dependencies.add("api", "org.tavall:tavall-database-postgres:$tavallToolsVersion")
+    }
+    if (path == ":velocitycore") {
+        dependencies.add("implementation", "org.tavall:tavall-database-redis:$tavallToolsVersion")
+    }
     apply(plugin = "maven-publish")
 
     extensions.configure<JavaPluginExtension> {
