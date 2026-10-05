@@ -1,0 +1,69 @@
+version: 2
+
+source:
+  repository: TavallStudios/MCRSpeedrun
+  provider: github
+
+build:
+  type: gradle
+  java: 25
+  gradle: 9.6.1
+
+resources:
+  mode: SYSTEM
+
+dependencies:
+  - kind: source
+    identity: TavallStudios/tavall-rating-glicko2
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-di
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-eventbus
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-logging
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-concurrency
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-reflection
+    role: SHARED_DEP
+    selector: required-source
+  - kind: source
+    identity: TavallStudios/tavall-scheduler
+    role: SHARED_DEP
+    selector: required-source
+
+artifacts:
+  - name: mcr-api-module
+    path: build/libs/api-0.jar
+  - name: mcr-api-lockfile
+    path: gradle.lockfile
+
+requiredChecks:
+  - quality
+
+checks:
+  quality:
+    executor: gradle
+    tasks:
+      - "clean"
+      - "check"
+      - "assemble"
+
+  dependencies:
+    executor: gradle
+    writeDependencyLocks: true
+    includeInAll: false
+    tasks:
+      - "clean"
+      - "check"
+      - "assemble"
