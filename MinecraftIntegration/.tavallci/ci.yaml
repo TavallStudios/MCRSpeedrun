@@ -19,7 +19,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-minecraft-integration-module
+  - name: minecraft-integration
     path: build/libs/minecraft-integration-0.jar
   - name: mcr-minecraft-integration-lockfile
     path: gradle.lockfile
