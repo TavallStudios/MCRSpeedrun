@@ -19,7 +19,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-kingdomfactions-module
+  - name: kingdomfactions
     path: build/libs/kingdomfactions-0.jar
   - name: mcr-kingdomfactions-lockfile
     path: gradle.lockfile

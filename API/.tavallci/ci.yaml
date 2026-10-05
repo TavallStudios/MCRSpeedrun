@@ -43,7 +43,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-api-module
+  - name: api
     path: build/libs/api-0.jar
   - name: mcr-api-lockfile
     path: gradle.lockfile

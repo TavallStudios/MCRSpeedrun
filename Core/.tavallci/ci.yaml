@@ -19,7 +19,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-core-module
+  - name: core
     path: build/libs/core-0.jar
   - name: mcr-core-lockfile
     path: gradle.lockfile
