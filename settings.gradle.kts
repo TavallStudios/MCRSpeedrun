@@ -4,6 +4,7 @@ plugins {
 
 rootProject.name = "MCRSpeedrun"
 
+
 include(
     "api",
     "core",
