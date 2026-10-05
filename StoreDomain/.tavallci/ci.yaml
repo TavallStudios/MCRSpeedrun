@@ -19,7 +19,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-store-domain-module
+  - name: store-domain
     path: build/libs/store-domain-0.jar
   - name: mcr-store-domain-lockfile
     path: gradle.lockfile
