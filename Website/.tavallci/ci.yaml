@@ -19,7 +19,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-website-module
+  - name: website
     path: build/libs/website-0.jar
   - name: mcr-website-lockfile
     path: gradle.lockfile
