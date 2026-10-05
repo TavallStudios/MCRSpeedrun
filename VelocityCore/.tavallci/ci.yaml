@@ -27,7 +27,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-velocitycore-module
+  - name: velocitycore
     path: build/libs/velocitycore-0.jar
   - name: mcr-velocitycore-lockfile
     path: gradle.lockfile
