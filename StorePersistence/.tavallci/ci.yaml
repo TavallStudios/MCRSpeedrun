@@ -23,7 +23,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-store-persistence-module
+  - name: store-persistence
     path: build/libs/store-persistence-0.jar
   - name: mcr-store-persistence-lockfile
     path: gradle.lockfile
