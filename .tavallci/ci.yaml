@@ -12,6 +12,17 @@ build:
 resources:
   mode: SYSTEM
 
+modules:
+  - API
+  - Core
+  - MinecraftIntegration
+  - StoreDomain
+  - StorePersistence
+  - VelocityCore
+  - KingdomFactions
+  - SpeedRun
+  - Website
+
 dependencies:
   - kind: source
     identity: TavallStudios/tavall-cache
