@@ -1,0 +1,45 @@
+version: 2
+
+source:
+  repository: TavallStudios/MCRSpeedrun
+  provider: github
+
+build:
+  type: gradle
+  java: 25
+  gradle: 9.6.1
+
+resources:
+  mode: SYSTEM
+
+dependencies:
+  - kind: source
+    identity: TavallStudios/tavall-di
+    role: SHARED_DEP
+    selector: required-source
+
+artifacts:
+  - name: mcr-kingdomfactions-module
+    path: build/libs/kingdomfactions-0.jar
+  - name: mcr-kingdomfactions-lockfile
+    path: gradle.lockfile
+
+requiredChecks:
+  - quality
+
+checks:
+  quality:
+    executor: gradle
+    tasks:
+      - "clean"
+      - "check"
+      - "assemble"
+
+  dependencies:
+    executor: gradle
+    writeDependencyLocks: true
+    includeInAll: false
+    tasks:
+      - "clean"
+      - "check"
+      - "assemble"
