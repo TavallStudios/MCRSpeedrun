@@ -23,7 +23,7 @@ dependencies:
     selector: required-source
 
 artifacts:
-  - name: mcr-speedrun-module
+  - name: speedrun
     path: build/libs/speedrun-0.jar
   - name: mcr-speedrun-lockfile
     path: gradle.lockfile
